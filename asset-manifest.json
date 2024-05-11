@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/GuiSouzaa/Site-Fecap.git/%7BSite-Fecap%7D/static/css/main.1a48333d.css",
+    "main.js": "/GuiSouzaa/Site-Fecap.git/%7BSite-Fecap%7D/static/js/main.25ce0ce6.js",
+    "static/js/453.9a460062.chunk.js": "/GuiSouzaa/Site-Fecap.git/%7BSite-Fecap%7D/static/js/453.9a460062.chunk.js",
+    "index.html": "/GuiSouzaa/Site-Fecap.git/%7BSite-Fecap%7D/index.html",
+    "main.1a48333d.css.map": "/GuiSouzaa/Site-Fecap.git/%7BSite-Fecap%7D/static/css/main.1a48333d.css.map",
+    "main.25ce0ce6.js.map": "/GuiSouzaa/Site-Fecap.git/%7BSite-Fecap%7D/static/js/main.25ce0ce6.js.map",
+    "453.9a460062.chunk.js.map": "/GuiSouzaa/Site-Fecap.git/%7BSite-Fecap%7D/static/js/453.9a460062.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a48333d.css",
+    "static/js/main.25ce0ce6.js"
+  ]
+}
