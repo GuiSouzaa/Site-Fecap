@@ -1,0 +1,11 @@
+.icones {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.icone { 
+    margin-right: 7px;
+    cursor: pointer;
+    padding: 0 5px;
+}
