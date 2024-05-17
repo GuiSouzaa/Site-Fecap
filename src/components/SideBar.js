@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { FaTh, FaCalendarAlt, FaUser, FaEnvelope, FaQuestionCircle, FaBars } from "react-icons/fa";
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { FaTh, FaCalendarAlt, FaUser, FaEnvelope, FaQuestionCircle, FaBars } from "react-icons/fa";
 
 const Container = styled.div`
     display: flex;
@@ -15,11 +15,13 @@ const Main = styled.main`
 const SidebarContainer = styled.div`
     background: #00693C;
     color: #fff;
-    height: 91vh;
+    height: 92vh;
     width: ${({ isOpen }) => (isOpen ? '200px' : '60px')};
     transition: all 0.5s;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    position: fixed;
 `;
 
 const TopSection = styled.div`
@@ -37,7 +39,7 @@ const Logo = styled.h1`
 const Bars = styled.div`
     display: flex;
     font-size: 25px;
-    margin-left: ${({ isOpen }) => (isOpen ? '-150px' : '0px')};
+    margin-left: ${({ isOpen }) => (isOpen ? '-150px' : '-10px')};
 `;
 
 const Link = styled(NavLink)`
@@ -74,12 +76,12 @@ const LinkText = styled.div`
 `;
 
 const Sidebar = ({ children }) => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = React.useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const menuItem = [
         {
             path: "/",
-            name: "Inicio",
+            name: "Início",
             icon: <FaTh />
         },
         {
@@ -115,7 +117,7 @@ const Sidebar = ({ children }) => {
                 </TopSection>
                 {
                     menuItem.map((item, index) => (
-                        <Link to={item.path} key={index} activeClassName="active">
+                        <Link to={item.path} key={index} activeClassName="active" exact> {/* Adicione exact aqui */}
                             <Icon>{item.icon}</Icon>
                             <LinkText isOpen={isOpen}>{item.name}</LinkText>
                         </Link>

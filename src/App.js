@@ -1,39 +1,32 @@
 import React from 'react';
-import Header from './componentes/Header';
-import styled from 'styled-components';
-import SideBar from './componentes/SideBar';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Inicio from './componentes/Pages/Inicio';
-import Eventos from './componentes/Pages/Eventos';
-import Perfil from './componentes/Pages/Perfil';
-import Convites from './componentes/Pages/Convites';
-import Ajuda from './componentes/Pages/Ajuda';
+import Navbar from './components/Navbar';
+import './App.css';
+import Inicio from './components/pages/Inicio';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Eventos from './components/pages/Eventos';
+import Convites from './components/pages/Convites';
+import Perfil from './components/pages/Perfil';
+import SideBar from './components/SideBar';
+import Ajuda from './components/pages/Ajuda';
 
-const AppContainer = styled.div`
-    width: 100vw;
-    height: 100vh;
-`;
 
 function App() {
   return (
-    <AppContainer>
-      <Header />
-      <BrowserRouter>
-      <SideBar>
-        <Routes>
-          
-          <Route path="/Inicio" element={<Inicio />} />
-          <Route path="/Eventos" element={<Eventos />} />
-          <Route path="/Perfil" element={<Perfil />} />
-          <Route path="/Convites" element={<Convites />} />
-          <Route path="/Ajuda" element={<Ajuda />} />
-
-        </Routes>
+    <>
+      <Router>
+        <Navbar />
+        <SideBar>
+        <Switch>
+          <Route path='/' exact component={Inicio} />
+          <Route path='/eventos' component={Eventos} />
+          <Route path='/convite' component={Convites} />
+          <Route path='/perfil' component={Perfil} />
+          <Route path='/Ajuda' component={Ajuda} />
+        </Switch>
         </SideBar>
-      </BrowserRouter>
-    </AppContainer>
+      </Router>
+    </>
   );
 }
 
 export default App;
-
