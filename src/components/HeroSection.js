@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Logo from '../imagens/Perfil.png'
 
 // Estilos CSS inseridos diretamente no arquivo JS usando styled-components
 const HeroContainer = styled.div`
@@ -30,11 +31,9 @@ const HeroDescription = styled.p`
 const HeroSection = () => {
   return (
     <HeroContainer>
-      {/* Certifique-se de corrigir a referência ao arquivo de imagem abaixo */}
-      {/*<img src='/images/Test.jpeg' alt='Imagem foda' />*/}
-      {/* Adicione o fechamento da tag img e corrija a referência ao arquivo de imagem */}
 
-     
+      {<img src='Logo' alt='Imagem foda' />}
+      
     </HeroContainer>
   );
 }

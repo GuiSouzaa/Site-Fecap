@@ -23,6 +23,17 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;    
   }
 
+  
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+
+
+
 `
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

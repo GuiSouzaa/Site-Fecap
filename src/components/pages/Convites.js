@@ -3,27 +3,34 @@ import styled from 'styled-components';
 import QRCode from 'react-qr-code';
 
 const PageContainer = styled.div`
-  margin-top: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 150px auto;
 `;
 
 const BigSquare = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  width: 90%; /* Ajuste a largura do BigSquare */
-  max-width: 1200px;
-  height: auto;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #efefef;
-  border: 2px solid #ccc;
-  border-radius: 10px;
+  position: relative;
+  width: 60vw;
+  height: 60vh;
+  background-color: #EFEFEF;  
+  display: flex;
+  flex-wrap: wrap; /* Adicionando flex-wrap para que os quadrados pequenos possam quebrar para uma nova linha */
+  align-items: flex-start;
+  justify-content: flex-start; 
+  border-radius: 20px;
+  padding: 10px;
+  padding-top: 80px;
+  overflow-y: auto; 
+  box-sizing: border-box;
 `;
 
 const SmallSquare = styled.div`
-  width: 100%;
+  width: calc(33.333% - 40px); /* Definindo a largura dos quadrados pequenos com margens */
   height: auto;
   display: flex;
+  margin: 20px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -31,6 +38,14 @@ const SmallSquare = styled.div`
   background-color: #efefef;
   border: 2px solid #ccc;
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    width: calc(50% - 40px); /* Alterando a largura dos quadrados pequenos para 50% quando a largura da tela for menor que 768px */
+  }
+
+  @media (max-width: 480px) {
+    width: calc(100% - 40px); /* Alterando a largura dos quadrados pequenos para 100% quando a largura da tela for menor que 480px */
+  }
 `;
 
 const TextContainer = styled.div`

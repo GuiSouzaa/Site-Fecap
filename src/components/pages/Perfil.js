@@ -18,24 +18,28 @@ const ProfilePage = styled.div`
 `;
 
 const MainContent = styled.div`
-  flex: 1;
   display: flex;
-  justify-content: center; /* Para centralizar o conteúdo horizontalmente */
+  justify-content: center;
   align-items: center;
-  max-width: 1000px; /* Defina o valor máximo que desejar */
-  margin: 130px auto; /* Para centralizar o conteúdo horizontalmente */
+  max-width: 1000px;
+  margin: 150px auto;
 `;
 
 const BigSquare = styled.div`
-  width: 1000px; /* Aumente ou diminua conforme necessário */
-  height: 600px; /* Aumente ou diminua conforme necessário */
-  background-color: #f0f0f0;
+  position: relative;
+  width: 60vw;
+  height: 60vh;
+  background-color: #EFEFEF;  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  align-items: flex-start;
+  justify-content: flex-start; 
   border-radius: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
+  padding: 10px;
+  padding-top: 70px;
+  overflow-y: auto; 
+  box-sizing: border-box;
 `;
 
 const SmallSquare = styled.div`
@@ -44,11 +48,20 @@ const SmallSquare = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 45px auto;
+  margin: 10px; 
   flex-direction: column;
-  position: relative; /* Para permitir posicionamento absoluto do botão */
-  width: 280px; /* Aumente ou diminua conforme necessário */
-  height: 180px; /* Aumente ou diminua conforme necessário */
+  position: relative; 
+  width: calc(33.333% - 20px); 
+  height: 180px;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    width: calc(50% - 20px); 
+  }
+
+  @media (max-width: 480px) {
+    width: calc(100% - 20px); 
+  }
 `;
 
 const SmallSquareText = styled.div`
@@ -62,7 +75,7 @@ const CourseButton = styled.button`
   bottom: 10px;
   right: 10px; /* Alinhamento à direita */
   background-color: transparent;
-  color: #007bff;
+  color: #black;
   border: none;
   width: 40px;
   height: 40px;

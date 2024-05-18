@@ -11,7 +11,6 @@ const PageContainer = styled.div`
 `
 
 const MainContent = styled.div`
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +30,7 @@ const BigSquare = styled.div`
 `;
 
 const CalendarioContainer = styled.div`
-    display: flex
+    display: flex;
     width: 70%; /* Largura ajustável */
     max-width: 400px; /* Largura máxima do calendário */
     background-color: white; /* Cor de fundo branca */

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Button from './Button';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import LogoImage from './../imagens/Perfil.png';
+import PerfilImage from './../imagens/FecapBranco.png';
 
 // Estilos CSS inseridos diretamente no arquivo JS usando styled-components
 const NavbarContainer = styled.nav`
@@ -76,7 +78,7 @@ const NavMenu = styled.ul`
     z-index: 1;
   }
 `;
-/*
+
 const NavItem = styled.li`
   height: 80px;
 `;
@@ -104,7 +106,7 @@ const NavLink = styled(Link)`
     }
   }
 `;
-*/
+
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
@@ -129,19 +131,20 @@ const Navbar = () => {
   return (
     <NavbarContainer>
       <NavbarContent>
-        <NavbarLogo to='/' onClick={closeMobileMenu}>
+              <NavbarLogo to='' onClick={closeMobileMenu}>
           <img
-            src='/images/FF.png'
+            src={PerfilImage} // Usando a imagem importada
             alt='Imagem perfil'
             style={{ width: '190px', height: 'auto', position: 'absolute', top: '20px', left: '20px' }}
           />
           <img
-            src='/images/Perfil.png'
+            src={LogoImage} // Usando a imagem importada
             alt='Imagem perfil'
             style={{ width: '60px', height: 'auto', position: 'absolute', top: '9px', right: '35px' }}
           />
           <NavbarIcon className="" />
         </NavbarLogo>
+
         <MenuIcon onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
         </MenuIcon>
