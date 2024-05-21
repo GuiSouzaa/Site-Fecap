@@ -40,6 +40,7 @@ const Bars = styled.div`
     display: flex;
     font-size: 25px;
     margin-left: ${({ isOpen }) => (isOpen ? '-150px' : '-10px')};
+    cursor: pointer;
 `;
 
 const Link = styled(NavLink)`
