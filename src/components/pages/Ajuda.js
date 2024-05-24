@@ -13,23 +13,33 @@ const MainContent = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 1000px;
-  margin: 420px auto;
+  margin: 100px auto;
 `;
 
 const BigSquare = styled.div`
-  position: absolute;
   width: 70vw;
   height: 70vh;
-  background: linear-gradient(90deg, #0FAA75 0%, #00693C 100%);  border-radius: 20px;
+  background: linear-gradient(90deg, #0FAA75 0%, #00693C 100%);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 `;
 
 const SmallSquareContainer = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 90%;
+  max-width: 1000px;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column; 
+    align-items: center; 
+  }
 `;
 
 const SmallSquare = styled.div`
@@ -39,8 +49,13 @@ const SmallSquare = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 280px;
-  height: 180px;
+  width: calc(33.33% - 20px); 
+  max-width: 300px;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    width: calc(100% - 20px); 
+  }
 `;
 
 const SmallSquareText = styled.div`
@@ -51,35 +66,23 @@ const SmallSquareText = styled.div`
   font-size: 18px;
 `;
 
-const BigSquareText = styled.div`
+const BigSquareText = styled.h2`
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
   text-align: center;
   z-index: 1;
+  font-size: min(6vw, 40px); 
 `;
-
-const BigSquareText1 = styled.h2`
-  position: absolute;
-  top: 30%; /* Ajuste o valor conforme necessário */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  text-align: center;
-  z-index: 1;
-  font-size: 40px;
-`
 
 export default function Profile() {
   return (
     <ProfilePage>
       <MainContent>
-      <BigSquareText1>Como podemos te ajudar?</BigSquareText1>
         <BigSquare>
-          <BigSquareText>
-          </BigSquareText>
+          <BigSquareText>Como podemos te ajudar?</BigSquareText>
           <SmallSquareContainer>
             <SmallSquare>
               <SmallSquareText>
@@ -92,14 +95,12 @@ export default function Profile() {
               <SmallSquareText>
                <h3>Telefone:</h3>
                 <p>40028922</p>
-                <p></p>
               </SmallSquareText>
             </SmallSquare>
             <SmallSquare>
               <SmallSquareText>
                 <h3>Email:</h3>
                 <p>fecapAlunos@hotmail.com</p>
-                <p></p>
               </SmallSquareText>
             </SmallSquare>
           </SmallSquareContainer>

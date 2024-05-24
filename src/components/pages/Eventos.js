@@ -8,36 +8,36 @@ const PageContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    margin: 150px auto;
 `
 
 const MainContent = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1000px;
-  margin: 420px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
 `;
 
 const BigSquare = styled.div`
-    position: absolute;
+    position: relative;
     width: 60vw;
     height: 60vh;
     background-color: #EFEFEF;  
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px
-`;
+    border-radius: 20px;
+    
+`
 
 const CalendarioContainer = styled.div`
     display: flex;
-    width: 70%; /* Largura ajustável */
-    max-width: 400px; /* Largura máxima do calendário */
-    background-color: white; /* Cor de fundo branca */
-    border-radius: 10px; /* Borda arredondada */
-    padding: 20px; /* Espaçamento interno */
+    width: 70%; 
+    max-width: 400px;
+    background-color: white;
+    border-radius: 10px; 
+    padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-    
 `
 
 const Eventos = () => {
@@ -57,20 +57,20 @@ const Eventos = () => {
     return (
         <PageContainer>
             <MainContent>
-            <BigSquare>
-            <CalendarioContainer>
-                <Calendar
-                    onChange={onChange}
-                    value={date}
-                    tileContent={({ date, view }) => {
-                        if (view === 'month') {
-                            const eventDates = events.map(event => new Date(event.date));
-                            return eventDates.some(eventDate => isSameDay(eventDate, date)) ? <div>Evento</div> : null;
-                        }
-                    }}
-                />
-            </CalendarioContainer>
-            </BigSquare>
+                <BigSquare>
+                    <CalendarioContainer>
+                        <Calendar
+                            onChange={onChange}
+                            value={date}
+                            tileContent={({ date, view }) => {
+                                if (view === 'month') {
+                                    const eventDates = events.map(event => new Date(event.date));
+                                    return eventDates.some(eventDate => isSameDay(eventDate, date)) ? <div>Evento</div> : null;
+                                }
+                            }}
+                        />
+                    </CalendarioContainer>
+                </BigSquare>
             </MainContent>
         </PageContainer>
     );

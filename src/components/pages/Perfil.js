@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import '@fortawesome/fontawesome-free/css/all.css'; // Importação do Font Awesome
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
 
 const ProfilePage = styled.div`
   display: flex;
-  justify-content: center; /* Para centralizar o conteúdo horizontalmente */
+  justify-content: center;
   align-items: flex-start;
   height: 100vh;
 `;
@@ -71,11 +71,11 @@ const SmallSquareText = styled.div`
 `;
 
 const CourseButton = styled.button`
-  position: absolute; /* Posicionamento absoluto */
+  position: absolute;
   bottom: 10px;
-  right: 10px; /* Alinhamento à direita */
+  right: 10px;
   background-color: transparent;
-  color: #black;
+  color: #000;
   border: none;
   width: 40px;
   height: 40px;
@@ -85,6 +85,10 @@ const CourseButton = styled.button`
   cursor: pointer;
 `;
 
+const handleDownload = (url) => {
+  window.open(url, '_blank');
+};
+
 export default function Profile() {
   return (
     <>
@@ -92,7 +96,7 @@ export default function Profile() {
       <ProfilePage>
         <MainContent>
           <BigSquare>
-            <SmallSquare>
+            <SmallSquare onClick={() => handleDownload('url_para_curso_1')}>
               <SmallSquareText>
                 <h3>Curso 1</h3>
                 <p>Horário: 09:00</p>
@@ -103,7 +107,7 @@ export default function Profile() {
                 <i className="fas fa-download" style={{ fontSize: '20px' }}></i>
               </CourseButton>
             </SmallSquare>
-            <SmallSquare>
+            <SmallSquare onClick={() => handleDownload('url_para_curso_2')}>
               <SmallSquareText>
                 <h3>Curso 2</h3>
                 <p>Horário: 10:00</p>
@@ -114,7 +118,7 @@ export default function Profile() {
                 <i className="fas fa-download" style={{ fontSize: '20px' }}></i>
               </CourseButton>
             </SmallSquare>
-            <SmallSquare>
+            <SmallSquare onClick={() => handleDownload('url_para_curso_3')}>
               <SmallSquareText>
                 <h3>Curso 3</h3>
                 <p>Horário: 11:00</p>
@@ -125,7 +129,7 @@ export default function Profile() {
                 <i className="fas fa-download" style={{ fontSize: '20px' }}></i>
               </CourseButton>
             </SmallSquare>
-            <SmallSquare>
+            <SmallSquare onClick={() => handleDownload('url_para_curso_4')}>
               <SmallSquareText>
                 <h3>Curso 4</h3>
                 <p>Horário: 12:00</p>
@@ -136,7 +140,7 @@ export default function Profile() {
                 <i className="fas fa-download" style={{ fontSize: '20px' }}></i>
               </CourseButton>
             </SmallSquare>
-            <SmallSquare>
+            <SmallSquare onClick={() => handleDownload('url_para_curso_5')}>
               <SmallSquareText>
                 <h3>Curso 5</h3>
                 <p>Horário: 13:00</p>
@@ -147,7 +151,7 @@ export default function Profile() {
                 <i className="fas fa-download" style={{ fontSize: '20px' }}></i>
               </CourseButton>
             </SmallSquare>
-            <SmallSquare>
+            <SmallSquare onClick={() => handleDownload('url_para_curso_6')}>
               <SmallSquareText>
                 <h3>Curso 6</h3>
                 <p>Horário: 14:00</p>

@@ -133,12 +133,12 @@ const Navbar = () => {
       <NavbarContent>
               <NavbarLogo to='' onClick={closeMobileMenu}>
           <img
-            src={PerfilImage} // Usando a imagem importada
-            alt='Imagem perfil'
+            src={PerfilImage} 
+            alt='Logo'
             style={{ width: '190px', height: 'auto', position: 'absolute', top: '20px', left: '20px' }}
           />
           <img
-            src={LogoImage} // Usando a imagem importada
+            src={LogoImage} 
             alt='Imagem perfil'
             style={{ width: '60px', height: 'auto', position: 'absolute', top: '9px', right: '35px' }}
           />
